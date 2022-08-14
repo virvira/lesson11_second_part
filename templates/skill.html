@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+</head>
+<body>
+    {% if candidates != [] %}
+        <h1>Найдено со скиллом {{ skill_name }}: {{ candidates_count }}</h1>
+        {% for candidate in candidates %}
+            <p><a href="/candidate/{{  candidate['id'] }}">{{ candidate['name'] }}</a></p>
+        {% endfor %}
+    {% else %}
+        <h1>Кандидатов со скиллом {{ candidate_skill }} не найдено</h1>
+    {% endif %}
+</body>
+</html>
